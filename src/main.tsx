@@ -2,11 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 // import { FirstStepsApp } from "./FirstStepsApp";
-import { MyHomeworkApp } from "./MyHomeworkApp";
+import { MyHomeworkAppTwo } from "./MyHomeworkAppTwo";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <FirstStepsApp /> */}
-    <MyHomeworkApp></MyHomeworkApp>
+    <MyHomeworkAppTwo />
   </StrictMode>,
 );
