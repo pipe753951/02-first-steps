@@ -1,20 +1,29 @@
+import type { CSSProperties } from "react";
+
+const firstName = "Gabriel José";
+const lastName = "García Márquez";
+
+const favoriteBooks = [
+  "Bible",
+  "Le Petit Prince",
+  "La historia, los viajes y la abuela",
+];
+
+const isActive = false;
+
+const address = {
+  zipCode: "ABC-123",
+  country: "Colombia",
+};
+
+const myStyles: CSSProperties = {
+  backgroundColor: "#e0faf0",
+  padding: 10,
+
+  borderRadius: isActive ? 10 : 20,
+};
+
 export function MyHomeworkAppTwo() {
-  const firstName = "Gabriel José";
-  const lastName = "García Márquez";
-
-  const favoriteBooks = [
-    "Bible",
-    "Le Petit Prince",
-    "La historia, los viajes y la abuela",
-  ];
-
-  const isActive = false;
-
-  const address = {
-    zipCode: "ABC-123",
-    country: "Colombia",
-  };
-
   return (
     <>
       <section>
@@ -36,7 +45,7 @@ export function MyHomeworkAppTwo() {
 
       <section>
         {/* <p>{address}</p> - React no permite colocar objetos */}
-        <p>{JSON.stringify(address)}</p>
+        <p style={myStyles}>{JSON.stringify(address)}</p>
       </section>
     </>
   );
