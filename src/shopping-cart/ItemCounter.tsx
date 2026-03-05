@@ -1,11 +1,25 @@
+import { useState } from "react";
+
 interface Props {
   name: string;
-  quantity: number;
+  quantity?: number;
 }
 
-export function ItemCounter({ name, quantity }: Props) {
-  const handleClick = () => {
-    console.log(`Click en ${name}`);
+export function ItemCounter({ name, quantity = 1 }: Props) {
+  // const itemCounterObj = useState(10);
+  const [count, setCount] = useState(quantity);
+
+  // const handleClick = () => {
+  //   console.log(`Click en ${name}`);
+  // };
+
+  const handleAdd = () => {
+    setCount(count + 1);
+  };
+  const handleSubtract = () => {
+    if (count === 1) return;
+
+    setCount(count - 1);
   };
 
   return (
@@ -21,7 +35,8 @@ export function ItemCounter({ name, quantity }: Props) {
         onMouseEnter={() => {
           console.log(`Mouse enter ${name}`);
         }}
-        onClick={handleClick}
+        onClick={handleAdd}
+        // onClick={handleClick}
         // onClick={(event) => {
         //   console.log(event);
 
@@ -30,8 +45,8 @@ export function ItemCounter({ name, quantity }: Props) {
       >
         +1
       </button>
-      <span>{quantity}</span>
-      <button>-1</button>
+      <span>{count}</span>
+      <button onClick={handleSubtract}>-1</button>
     </section>
   );
 }
