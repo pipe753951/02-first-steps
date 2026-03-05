@@ -1,4 +1,9 @@
-export function ItemCounter() {
+interface Props {
+  name: string;
+  quantity: number;
+}
+
+export function ItemCounter({ name, quantity }: Props) {
   return (
     <section
       style={{
@@ -7,9 +12,9 @@ export function ItemCounter() {
         gap: 10,
       }}
     >
-      <h2>Cien años de soledad</h2>
+      <h2>{name}</h2>
       <button>+1</button>
-      <span>10</span>
+      <span>{quantity}</span>
       <button>-1</button>
     </section>
   );
