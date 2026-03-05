@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+// import "./ItemCounter.css";
+import styles from "./ItemCounter.module.css";
+
 interface Props {
   name: string;
   quantity?: number;
@@ -24,13 +27,16 @@ export function ItemCounter({ name, quantity = 1 }: Props) {
 
   return (
     <section
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-      }}
+      // className="item-row"
+      className={styles["item-row"]}
+      // style={{
+      //   display: "flex",
+      //   alignItems: "center",
+      //   gap: 10,
+      // }}
     >
-      <h2>{name}</h2>
+      {/* <h2 className="item-text">{name}</h2> */}
+      <h2 className={styles["item-row"]}>{name}</h2>
       <button
         onMouseEnter={() => {
           console.log(`Mouse enter ${name}`);
